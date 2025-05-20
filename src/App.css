@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
-}
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
 }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0;
+}
+.Wid-Hei-100 {
+  width: 100%;
+  height: 100%;
+}
+.Flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.Card {
+  background-image: url('./images/bg-pattern-desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 150px;
+  align-content: center;
+  position: relative;
+}
+.LogoSection {
+  margin: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.TitleSection {
+  margin: 30px auto;
+}
+.Title {
+  letter-spacing: 10px;
+}
+.FontW400 {
+  font-weight: 400;
+}
+.Description {
+  margin: 25px auto;
+  max-width: 325px;
+}
+.ColorDered {
+  color: var(--Desaturated-Red);
+}
+.FontW600 {
+  font-weight: 600;
+}
+.EmailInput {
+  border-radius: 30px;
+  border: 1px solid var(--Desaturated-Red);
+  padding: 10px 30px;
+  width: 200px;
+  height: 30px;
+}
+.EmailInput:focus {
+  outline: none;
+}
+.EmailError {
+  border: 1px solid var(--Soft-Red)
+}
+.ButtonSection {
+  background-color: var(--Desaturated-Red);
+  border-radius: 30px;
+  width: 100px;
+  height: 52px;
+  text-align: center;
+  align-content: center;
+  display: inline-block;
+  position: absolute;
+  transform: translateX(-50px);
+}
+.ButtonSection:hover {
+  background-color: var(--Soft-Red);
+  cursor: pointer;
+}
+.SubBtn {
+  color: var(--Dark-Grayish-Red);
+}
+.ErrorMsg {
+  color: var(--Soft-Red);
+  margin: 5px 10px;
+  visibility: hidden;
+}
+.ErrorImg {
+  position: absolute;
+  transform: translate(-80px, 14px);
+  visibility: hidden;
+}
+.Show {
+  visibility: visible;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 550px) {
+  body {
+    max-width: 550px;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+  .Flex-row {
+    flex-direction: column-reverse;
+  }
+  .Card {
+    position: static;
+    text-align: center;
+  }
+  .HeroImage {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+  }
+  .ErrorImg {
+    transform: translate(-80px, 14px);
   }
 }
